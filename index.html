@@ -524,7 +524,7 @@ function labelHTML(t,title='Набор',sizeKey='30x30'){
   const metaPt=Math.max(lineBase-Math.max(0,cnt-7)*0.12,sizeKey==='30x30'?3.25:4.2);
   const items=t.rows.map(({x,q})=>`<div class="label-item"><span>${esc(x.print)}</span><b>×${q}</b></div>`).join('');
   const note=t.hasIncomplete?'*':'';
-  return `<div class="label-watermark">${triLeafSVG()}</div>
+  return `<div class="label-watermark">${<img src="herbalife-trefoil.png" class="trefoil-watermark-img" alt="">}</div>
     <div class="label-core">
       <div class="label-title" style="font-size:${titlePt}pt">${esc(cleanTitle)}</div>
       <div class="label-items" style="font-size:${itemPt}pt">${items}</div>
@@ -535,7 +535,7 @@ function labelHTML(t,title='Набор',sizeKey='30x30'){
         <div class="label-line"><span>Скидка</span><span>${t.tier==='retail'?'розница':t.tier+'%'}</span></div>
         <div class="label-line total"><span>Итого</span><span>${money(t.price)} ₽</span></div>
       </div>
-      ${showClub?`<div class="label-brand" style="font-size:${Math.max(metaPt-0.2,sizeKey==='30x30'?3.15:4.4)}pt">${triLeafSVG()}<span>${esc(club)}</span></div>`:''}
+      ${showClub?`<div class="label-brand" style="font-size:${Math.max(metaPt-0.2,sizeKey==='30x30'?3.15:4.4)}pt">${<img src="herbalife-trefoil.png" class="trefoil-mini-img" alt="">}<span>${esc(club)}</span></div>`:''}
     </div>`;
 }
 
